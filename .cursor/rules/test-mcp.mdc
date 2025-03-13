@@ -1,0 +1,41 @@
+---
+description: MCP learning project rules and preference
+globs: 
+alwaysApply: false
+---
+
+
+tools:
+  package_manager: uv
+  shell: zsh
+  os: macOS
+
+preferences:
+  - prefer_cli_over_gui
+  - use_loguru_for_logging
+
+commands:
+  # Package management
+  install_tool: "uv tool install {package}"  # For installing Python packages with executables
+  add_dep: "uv add {package}"               # For adding project dependencies
+  remove_dep: "uv remove {package}"         # For removing project dependencies
+  sync_env: "uv sync"                       # Update project's environment
+  update_lock: "uv lock"                    # Update project's lockfile
+  
+  # Environment management
+  create_venv: "uv venv"                    # Create virtual environment
+  run_script: "uv run {script}"             # Run Python scripts in project environment
+  
+  # Dependency inspection
+  show_deps: "uv tree"                      # Display dependency tree
+
+post_task_checklist:
+  - Update TODO.md to mark completed tasks
+  - Commit changes with descriptive message
+  - Push changes to repository
+
+file_updates:
+  todo:
+    path: TODO.md
+    mark_complete: "- [X]"
+    mark_incomplete: "- [ ]"
