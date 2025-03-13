@@ -70,3 +70,6 @@ async def analyze_sales(country: str = None, ctx: Context = None) -> str:
         if ctx:
             await ctx.error(f"Analysis failed: {str(e)}")
         return f"Error: {str(e)}"
+
+if __name__ == "__main__":
+    mcp.run()
