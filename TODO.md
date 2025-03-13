@@ -20,13 +20,15 @@ This learning path is designed to help you master the Model Context Protocol (MC
 
   *start with the inspector for convenience. notes in doc/02_basic_echo.md*
 
-- [ ] **1.3 Resource Implementation**
-  - [ ] Create static resource endpoint
-  - [ ] Create dynamic resource with parameters
-  - [ ] Test resource access patterns
-  - [ ] Document resource response times
+- [X] **1.3 Resource Implementation**
+  - [X] Create static resource endpoint (config://app)
+  - [X] Create dynamic resource with parameters (calculator://{operation}/{a}/{b})
+  - [X] Test resource access patterns (product://{product_id} with error handling)
+  - [X] Document resource response times through logging
 
-- [ ] **1.4 Basic Error Handling**
+  *implemented various resources including static, dynamic, and error handling examples. notes in doc/03_resource_implementation.md*
+
+- [ ] **1.4 Basic Error Handling** ← Next Task
   - [ ] Implement try-catch blocks
   - [ ] Test error responses
   - [ ] Verify error messages are helpful
@@ -137,6 +139,7 @@ Each milestone should conclude with a comprehensive demo that showcases:
    - Advanced prompts
    - Streaming capabilities
    - Production monitoring
+   - Using it with Cursor
 
 ## Testing Guidelines
 - Create unit tests for each component
