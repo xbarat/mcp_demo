@@ -44,11 +44,11 @@ This learning path is designed to help you master the Model Context Protocol (MC
 
   *completed with document analysis system implementation*
 
-- [ ] Resource Management
-  - [ ] Implement dynamic resource routing
-  - [ ] Create nested resource paths
-  - [ ] Add resource caching
-  - [ ] Test resource updates
+- [X] Resource Management
+  - [X] Implement dynamic resource routing
+  - [X] Create nested resource paths
+  - [X] Add resource caching
+  - [X] Test resource updates
 
 - [ ] Context & State Management
   - [ ] Use Context object in tools
@@ -72,8 +72,8 @@ This learning path is designed to help you master the Model Context Protocol (MC
   - [ ] Monitor memory usage
 
 - [ ] Database Integration
-  - [ ] Create SQLite explorer
-  - [ ] Implement safe query tools
+  - [X] Create SQLite explorer
+  - [X] Implement safe query tools
   - [ ] Add schema resources
   - [ ] Test connection pooling
 
