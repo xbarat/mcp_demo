@@ -29,3 +29,7 @@ build/
 # Miscellaneous
 .DS_Store
 Thumbs.db
+database.db
+online_retail.db
+sales_data.db
+*.db
