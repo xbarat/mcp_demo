@@ -50,11 +50,11 @@ This learning path is designed to help you master the Model Context Protocol (MC
   - [X] Add resource caching
   - [X] Test resource updates
 
-- [ ] Context & State Management
-  - [ ] Use Context object in tools
-  - [ ] Implement progress tracking
-  - [ ] Test state persistence
-  - [ ] Handle concurrent requests
+- [X] Context & State Management
+  - [X] Use Context object in tools
+  - [X] Implement progress tracking (notification?)
+  - [X] Test state persistence
+  - [X] Handle concurrent requests
 
 - [ ] Image Handling
   - [ ] Create image processing tool
@@ -65,17 +65,17 @@ This learning path is designed to help you master the Model Context Protocol (MC
 ## 🎯 Milestone 3: Integration & Deployment
 **Goal**: Create production-ready MCP servers
 
-- [ ] Lifecycle Management
-  - [ ] Implement lifespan handlers
-  - [ ] Add startup/shutdown hooks
-  - [ ] Test resource cleanup
-  - [ ] Monitor memory usage
+- [X] Lifecycle Management
+  - [X] Implement lifespan handlers
+  - [X] Add startup/shutdown hooks
+  - [X] Test resource cleanup
+  - [X] Monitor memory usage
 
 - [ ] Database Integration
   - [X] Create SQLite explorer
   - [X] Implement safe query tools
-  - [ ] Add schema resources
-  - [ ] Test connection pooling
+  - [X] Add schema resources
+  - [X] Test connection pooling
 
 - [ ] Security & Validation
   - [ ] Add input validation

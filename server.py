@@ -1,4 +1,4 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP, Context
 from loguru import logger
 import sqlite3
 
@@ -14,18 +14,32 @@ def get_schema() -> str:
     return "\n".join(sql[0] for sql in schema if sql[0])
 
 @mcp.tool()
-def query_data(sql: str) -> str:
-    """Execute SQL queries safely"""
+async def query_data(sql: str, ctx: Context = None) -> str:
+    """Execute SQL queries safely with basic context usage"""
+    # Use context for logging if available
+    if ctx:
+        await ctx.info(f"Executing query: {sql}")
+    
     conn = sqlite3.connect("online_retail.db")
     try:
         result = conn.execute(sql).fetchall()
+        
+        if ctx:
+            await ctx.info("Query completed successfully")
+            
         return "\n".join(str(row) for row in result)
     except Exception as e:
+        if ctx:
+            await ctx.error(f"Query failed: {str(e)}")
         return f"Error: {str(e)}"
 
 @mcp.tool()
-def analyze_sales(country: str = None) -> str:
-    """Analyze sales data for a specific country or all countries"""
+async def analyze_sales(country: str = None, ctx: Context = None) -> str:
+    """Analyze sales data with basic progress tracking"""
+    if ctx:
+        await ctx.info("Starting analysis...")
+        await ctx.report_progress(1, 2)  # Simple 2-step progress
+    
     conn = sqlite3.connect("online_retail.db")
     try:
         if country:
@@ -46,6 +60,13 @@ def analyze_sales(country: str = None) -> str:
             ORDER BY Revenue DESC LIMIT 10
             """
             result = conn.execute(query).fetchall()
+            
+        if ctx:
+            await ctx.info("Analysis complete")
+            await ctx.report_progress(2, 2)
+            
         return "\n".join(f"{row[0]}: {row[1]} orders, ${row[2]:.2f} revenue" for row in result)
     except Exception as e:
+        if ctx:
+            await ctx.error(f"Analysis failed: {str(e)}")
         return f"Error: {str(e)}"
